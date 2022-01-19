@@ -1,0 +1,15 @@
+/Users/alonakirichenko/LabbShop/shopping/bin/Debug/net5.0/shopping.deps.json
+/Users/alonakirichenko/LabbShop/shopping/bin/Debug/net5.0/shopping.runtimeconfig.json
+/Users/alonakirichenko/LabbShop/shopping/bin/Debug/net5.0/shopping.runtimeconfig.dev.json
+/Users/alonakirichenko/LabbShop/shopping/bin/Debug/net5.0/shopping.dll
+/Users/alonakirichenko/LabbShop/shopping/bin/Debug/net5.0/ref/shopping.dll
+/Users/alonakirichenko/LabbShop/shopping/bin/Debug/net5.0/shopping.pdb
+/Users/alonakirichenko/LabbShop/shopping/obj/Debug/net5.0/shopping.csprojAssemblyReference.cache
+/Users/alonakirichenko/LabbShop/shopping/obj/Debug/net5.0/shopping.GeneratedMSBuildEditorConfig.editorconfig
+/Users/alonakirichenko/LabbShop/shopping/obj/Debug/net5.0/shopping.AssemblyInfoInputs.cache
+/Users/alonakirichenko/LabbShop/shopping/obj/Debug/net5.0/shopping.AssemblyInfo.cs
+/Users/alonakirichenko/LabbShop/shopping/obj/Debug/net5.0/shopping.csproj.CoreCompileInputs.cache
+/Users/alonakirichenko/LabbShop/shopping/obj/Debug/net5.0/shopping.dll
+/Users/alonakirichenko/LabbShop/shopping/obj/Debug/net5.0/ref/shopping.dll
+/Users/alonakirichenko/LabbShop/shopping/obj/Debug/net5.0/shopping.pdb
+/Users/alonakirichenko/LabbShop/shopping/obj/Debug/net5.0/shopping.genruntimeconfig.cache
