@@ -7,6 +7,6 @@ namespace shopping.Models
 {
     public interface IGetForFreeItem
     {
-        // void discountOneItemForFree(List<CartCheck> cart);
+         double discountOneItemForFree(List<CartCheck> cart, double sum);
     }
 }

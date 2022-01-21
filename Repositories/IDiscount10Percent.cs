@@ -6,6 +6,6 @@ namespace shopping.Models
 {
     public interface IDiscount10Percent
     {
-        int discountTenPercent(int sumFotForWholeCheck);
+        double discountTenPercent(double sumFotForWholeCheck);
     }
 }

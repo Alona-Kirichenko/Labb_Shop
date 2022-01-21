@@ -7,12 +7,15 @@ namespace shopping.Repositories
 {
     public interface ICart
     {   
+
         
         void myCheck();
+        List<CartCheck> GetListCart();
          void AddToCart(CartCheck productAndAmount);
-        void DeleteFromCart(CartCheck productAndAmount);
+        // void DeleteFromCart(CartCheck productAndAmount);
+          void DeleteFromCart(int id);
 
-        void SumForAllCart( List<CartCheck> userCart);
+        double SumForAllCart( double sumAfterDiscount, bool showTheCheck);
 
 
         

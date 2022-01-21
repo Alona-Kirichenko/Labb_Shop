@@ -8,20 +8,22 @@ namespace shopping.Models
 {
     public class Cart : ICart 
     {
-        // public List<Product> MyCart = new List<Product>();
+       
         public List<CartCheck> MyCheck;
        
     public Cart()
     {
         MyCheck = new List<CartCheck>();
     }
-
+    public List<CartCheck> GetListCart(){
+        return  MyCheck;
+    }
         
-    //    public List<Product> allProductsInMyCart(){return MyCart;}
+    
        public void myCheck(){
 
            foreach (CartCheck item in MyCheck){
-               Console.WriteLine( "Name: "+ item.Item.Name + " " + "  amount: "+ item.Amount+ "  PricePerOne: " + item.Item.Price + "  Total: " + item.SumOfPrice + " €");
+               Console.WriteLine( "Name: "+ item.Item.Name + " " + "  amount: "+ item.Amount+ "  PricePerOne: " + item.Item.Price + "€" + "  Total: " + item.SumOfPrice + "€");
 
            }
            
@@ -42,68 +44,116 @@ namespace shopping.Models
 
            }
 
+            
+            
+            
+         }
 
-        //    foreach (CartCheck item in MyCheck){
-        //        CartCheck ifProductExist = MyCheck.Find(item => item.Item.Id == productAndAmount.Item.Id);
-        //     //    if(ifProductExist.Item.Id )
+         public void DeleteFromCart(int id){
+
+            //   var itemToRemove = MyCheck.Find(item => item.Item.Id  == productAndAmount.Item.Id);
+            
+             var itemToRemove = MyCheck.Find(item => item.Item.Id  == id);
+                if (itemToRemove != null)
+                {
+                    Console.WriteLine("itemToRemove" + itemToRemove);
+                    MyCheck.Remove(itemToRemove);
+                }
+
+            //  bool containsItem = MyCheck.Any(item => item.Item.Id  == productAndAmount.Item.Id);
+
+        //   if(containsItem == true){
              
 
+
+
+        //   CartCheck ifProductExist = MyCheck.Find(item => item.Item.Id == productAndAmount.Item.Id);
+
+        //   if(ifProductExist.Amount > productAndAmount.Amount ){
+
+        //    Console.WriteLine("ifProductExist.Amount > productAndAmount.Amount" + ifProductExist.Amount + " " + productAndAmount.Amount);
+
+        //   ifProductExist.SumOfPrice = ifProductExist.SumOfPrice - productAndAmount.SumOfPrice ; 
+
+        //   ifProductExist.Amount = ifProductExist.Amount - productAndAmount.Amount  ;
+
+        //   } else if (ifProductExist.Amount == productAndAmount.Amount ) {
+           
+        //      MyCheck.Remove(ifProductExist);
+
+        //   }
+        //   else{
+        //        Console.WriteLine("ifProductExist.Amount > productAndAmount.Amount" + ifProductExist.Amount + " " + productAndAmount.Amount);
+        //       Console.WriteLine("You want to take away more than exist in your cart");
+        //   }
+
+
+        //    } else {
+        //        Console.WriteLine("You dont have this product in your cart");
+
         //    }
-            
-            
-            
-         }
-
-         public void DeleteFromCart(CartCheck productAndAmount){
-
-             bool containsItem = MyCheck.Any(item => item.Item.Id  == productAndAmount.Item.Id);
-
-          if(containsItem == true){
-
-          CartCheck ifProductExist = MyCheck.Find(item => item.Item.Id == productAndAmount.Item.Id);
-
-          if(ifProductExist.Amount > productAndAmount.Amount ){
-
-           Console.WriteLine("ifProductExist.Amount > productAndAmount.Amount" + ifProductExist.Amount + " " + productAndAmount.Amount);
-
-          ifProductExist.SumOfPrice = ifProductExist.SumOfPrice - productAndAmount.SumOfPrice ; 
-
-          ifProductExist.Amount = ifProductExist.Amount - productAndAmount.Amount  ;
-
-          } else if (ifProductExist.Amount == productAndAmount.Amount ) {
-            //    CartCheck deleteProduct = MyCheck.Find(item => item.Item.Id == productAndAmount.Item.Id);
-             MyCheck.Remove(ifProductExist);
-
-          }
-          else{
-               Console.WriteLine("ifProductExist.Amount > productAndAmount.Amount" + ifProductExist.Amount + " " + productAndAmount.Amount);
-              Console.WriteLine("You want to take away more than exist in your cart");
-          }
-
-
-           } else {
-               Console.WriteLine("You dont have this product in your cart");
-
-           }
 
             
          }
 
-          public void SumForAllCart( List<CartCheck> userCart){
-              foreach (CartCheck item in userCart){
+          public double SumForAllCart(double sumAfterDiscount, bool showTheCheck){
+              double sum = 0;
+              string name = "";
+              int amount = 0;
+              double prise = 0.0;
+              double sumOfItemsPrice= 0.0;
 
-               Console.WriteLine("THIS IS SUM" + item.SumOfPrice);
+           
+                
+                 foreach (CartCheck item in  MyCheck){
+                    
+                     
+                       sum = sum + item.SumOfPrice;
+                 }
+                       if(sumAfterDiscount != 0.0){
+                           sum = sumAfterDiscount;
+                         
+                       }
+                    
+                        if (showTheCheck) {
+                              Console.WriteLine("********************************************************************");
+                              Console.WriteLine("                                                                  ");
+                               Console.WriteLine("                       <3      CHECK      <3              ");
+                               Console.WriteLine("                                                                  ");
+                 
+                 for(int i = 0; i < MyCheck.Count;  i++ ){
+                  var itemIn = MyCheck[i];
+                  name = itemIn.Item.Name;
+                  amount = itemIn.Amount;
+                  prise = itemIn.Item.Price;
+                  sumOfItemsPrice = itemIn.SumOfPrice;
+                   
 
-           }
+                  Console.WriteLine( "* Name: "+ name + " " + "  amount: "+ amount+ "  PricePerOne: " + prise + "€" + "  Total: " + sumOfItemsPrice + "€");
+                 }
+               
+
+              if(sumAfterDiscount != 0.0 && showTheCheck){
+                    Console.WriteLine("\n* TOTAL SUM TO PLAY AFTER ALL DICTOUNTS:    " + sum);
+
+              } else{
+                    Console.WriteLine("\n* TOTAL SUM TO PLAY BEFORE DISCOUNT:    " + sum);
+
+              }
+            
+
+               Console.WriteLine("                                                                  ");
+
+                Console.WriteLine("********************************************************************");
+                        }
+
+           
+           return sum;
 
           }
 
          
-    //    public double DeleteFromCart(Product product, double sum){
-    //        Product deleteProduct = MyCart.Find(item => item == product);
-    //        MyCart.Remove(deleteProduct);
-    //        return sum = sum - product.Price;
-    //    }
+   
 
     }
 }
