@@ -12,7 +12,7 @@ namespace shopping.Repositories
         void myCheck();
         List<CartCheck> GetListCart();
          void AddToCart(CartCheck productAndAmount);
-        // void DeleteFromCart(CartCheck productAndAmount);
+       
           void DeleteFromCart(int id);
 
         double SumForAllCart( double sumAfterDiscount, bool showTheCheck);

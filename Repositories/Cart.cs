@@ -50,8 +50,6 @@ namespace shopping.Models
          }
 
          public void DeleteFromCart(int id){
-
-            //   var itemToRemove = MyCheck.Find(item => item.Item.Id  == productAndAmount.Item.Id);
             
              var itemToRemove = MyCheck.Find(item => item.Item.Id  == id);
                 if (itemToRemove != null)
@@ -59,41 +57,7 @@ namespace shopping.Models
                     Console.WriteLine("itemToRemove" + itemToRemove);
                     MyCheck.Remove(itemToRemove);
                 }
-
-            //  bool containsItem = MyCheck.Any(item => item.Item.Id  == productAndAmount.Item.Id);
-
-        //   if(containsItem == true){
-             
-
-
-
-        //   CartCheck ifProductExist = MyCheck.Find(item => item.Item.Id == productAndAmount.Item.Id);
-
-        //   if(ifProductExist.Amount > productAndAmount.Amount ){
-
-        //    Console.WriteLine("ifProductExist.Amount > productAndAmount.Amount" + ifProductExist.Amount + " " + productAndAmount.Amount);
-
-        //   ifProductExist.SumOfPrice = ifProductExist.SumOfPrice - productAndAmount.SumOfPrice ; 
-
-        //   ifProductExist.Amount = ifProductExist.Amount - productAndAmount.Amount  ;
-
-        //   } else if (ifProductExist.Amount == productAndAmount.Amount ) {
-           
-        //      MyCheck.Remove(ifProductExist);
-
-        //   }
-        //   else{
-        //        Console.WriteLine("ifProductExist.Amount > productAndAmount.Amount" + ifProductExist.Amount + " " + productAndAmount.Amount);
-        //       Console.WriteLine("You want to take away more than exist in your cart");
-        //   }
-
-
-        //    } else {
-        //        Console.WriteLine("You dont have this product in your cart");
-
-        //    }
-
-            
+  
          }
 
           public double SumForAllCart(double sumAfterDiscount, bool showTheCheck){

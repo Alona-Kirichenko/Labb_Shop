@@ -10,15 +10,6 @@ namespace shopping.Models
         public double discountOneItemForFree(List<CartCheck> cart, double sum) {
             double newSum = 0.0;
             if(sum > 2000 && cart.Count >= 3){
-                //  double lowest_price = cart.Min(c => c.Item.Price);
-                //  CartCheck prouctWithMinPrice = cart.Find(p => p.Item.Price == lowest_price);
-
-                //  newSum = sum - prouctWithMinPrice.SumOfPrice;
-                //  prouctWithMinPrice.SumOfPrice = 0.0;
-
-                //  Console.WriteLine("You get for free: " + prouctWithMinPrice.Item.Name  + " " + prouctWithMinPrice.SumOfPrice );
-
-            ///////////////////////////////////////////////////
 
              double lowest_price = cart.Min(c => c.SumOfPrice);
                newSum = sum - lowest_price;

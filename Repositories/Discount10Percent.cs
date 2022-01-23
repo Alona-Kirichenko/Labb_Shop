@@ -15,7 +15,7 @@ namespace shopping.Models
 
                 
                 Console.WriteLine("\nDiscount 10% Percent  ");
-                Console.WriteLine("Old sum: " + sumFotForWholeCheck + "    Sum to pay after 10% discount " + discount +"\n" );
+                Console.WriteLine("Old sum: " + sumFotForWholeCheck + "    Sum to pay after 10% discount  " + discount + "€" +"\n" );
 
 
              }
